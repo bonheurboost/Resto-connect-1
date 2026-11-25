@@ -1,0 +1,231 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    /* RestoConnect Light Mode — Blanc, Gris clair, Noir profond, Jaune doré */
+    --rc-bg: #ffffff;
+    --rc-bg-subtle: #f3f3f3;
+    --rc-card: #ffffff;
+    --rc-card-elevated: #f7f7f7;
+    --rc-surface-muted: #f3f3f3;
+    --rc-fg: #0b0b0b;
+    --rc-muted: #5a5a5a;
+    --rc-border: #e7e7e7;
+    --rc-border-strong: #d4d4d4;
+
+    /* Couleur d'accent officielle RestoConnect */
+    --rc-gold: #f5b800;
+    --rc-gold-hover: #e0a800;
+    --rc-gold-soft: #ffd34e;
+    --rc-gold-tint: rgba(245, 184, 0, 0.14);
+    --rc-gold-text: #8c6200;
+    --rc-on-gold: #0b0b0b;
+
+    /* Shell & actions */
+    --rc-sidebar: #f8f8f8;
+    --rc-sidebar-border: #e7e7e7;
+    --rc-header: rgba(255, 255, 255, 0.92);
+    --rc-primary-btn: #f5b800;
+    --rc-primary-btn-fg: #0b0b0b;
+    --rc-secondary-btn: #0b0b0b;
+    --rc-secondary-btn-fg: #ffffff;
+
+    /* Sémantique statut */
+    --rc-success-fg: #15803d;
+    --rc-success-bg: #f0fdf4;
+    --rc-success-border: #bbf7d0;
+    --rc-warn-fg: #b45309;
+    --rc-warn-bg: #fffbeb;
+    --rc-warn-border: #fcd34d;
+    --rc-danger-fg: #b91c1c;
+    --rc-danger-bg: #fef2f2;
+    --rc-danger-border: #fecaca;
+
+    /* Graphiques */
+    --rc-chart-primary: #f5b800;
+    --rc-chart-secondary: #0b0b0b;
+    --rc-chart-track: #f3f3f3;
+    --rc-chart-grid: #e7e7e7;
+
+    /* Tokens UI génériques */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 45 100% 48%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 45 100% 48%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 91%;
+    --input: 0 0% 85%;
+    --ring: 45 100% 48%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    /* RestoConnect Dark Mode (apparence principale) — Noir profond, Noir secondaire, Gris foncé, Jaune doré */
+    --rc-bg: #0b0b0b;
+    --rc-bg-subtle: #151515;
+    --rc-card: #151515;
+    --rc-card-elevated: #202020;
+    --rc-surface-muted: #202020;
+    --rc-fg: #ffffff;
+    --rc-muted: #a0a0a0;
+    --rc-border: #292929;
+    --rc-border-strong: #383838;
+
+    --rc-gold: #f5b800;
+    --rc-gold-hover: #ffd34e;
+    --rc-gold-soft: #ffd34e;
+    --rc-gold-tint: rgba(245, 184, 0, 0.14);
+    --rc-gold-text: #ffd34e;
+    --rc-on-gold: #0b0b0b;
+
+    --rc-sidebar: #151515;
+    --rc-sidebar-border: #292929;
+    --rc-header: rgba(11, 11, 11, 0.92);
+    --rc-primary-btn: #f5b800;
+    --rc-primary-btn-fg: #0b0b0b;
+    --rc-secondary-btn: #202020;
+    --rc-secondary-btn-fg: #ffffff;
+
+    --rc-success-fg: #4ade80;
+    --rc-success-bg: rgba(34, 197, 94, 0.12);
+    --rc-success-border: rgba(74, 222, 128, 0.32);
+    --rc-warn-fg: #ffd34e;
+    --rc-warn-bg: rgba(245, 184, 0, 0.12);
+    --rc-warn-border: rgba(255, 211, 78, 0.32);
+    --rc-danger-fg: #f87171;
+    --rc-danger-bg: rgba(239, 68, 68, 0.14);
+    --rc-danger-border: rgba(248, 113, 113, 0.35);
+
+    --rc-chart-primary: #f5b800;
+    --rc-chart-secondary: #e5e5e5;
+    --rc-chart-track: #202020;
+    --rc-chart-grid: #292929;
+
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 100% 48%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 45 100% 48%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 16%;
+    --input: 0 0% 22%;
+    --ring: 45 100% 48%;
+  }
+
+  * {
+    border-color: var(--rc-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--rc-bg);
+    color: var(--rc-fg);
+    font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--rc-bg);
+    color: var(--rc-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono, code, pre, .tabular-nums {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  select,
+  textarea {
+    background-color: var(--rc-card);
+    color: var(--rc-fg);
+    border-color: var(--rc-border-strong);
+  }
+
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--rc-gold);
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    accent-color: var(--rc-gold);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #rc-printable-receipt,
+  #rc-printable-receipt *,
+  #rc-printable-document,
+  #rc-printable-document * {
+    visibility: visible !important;
+  }
+  #rc-printable-receipt,
+  #rc-printable-document {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 8mm !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #0b0b0b !important;
+  }
+  #rc-printable-receipt.rc-thermal-80mm {
+    width: 80mm !important;
+    padding: 4mm !important;
+  }
+  .rc-no-print {
+    display: none !important;
+  }
+}

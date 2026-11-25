@@ -1,0 +1,6 @@
+{
+  "name": "RestoConnect",
+  "description": "La gestion intelligente de votre restaurant — Plateforme SaaS multi-tenant de gestion et digitalisation des restaurants en RDC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
